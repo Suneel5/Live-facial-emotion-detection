@@ -28,20 +28,16 @@ def emotion_detction(img):
     #Detcting face in the image so we can feed it to the  model for emotion prediction
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
     faces = face_cascade.detectMultiScale(img)
-    
-    #if there is no any face feed whole image for prediction 
-    if faces == ():
-        predicted_emotion = predict_emotion(img)
-        cv2.putText(img, predicted_emotion, (20, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (225, 0, 0), 2)
-        plot_img(img)
 
-    else:
+    if faces != ():
         for x, y, w, h in faces:
             img_rec = cv2.rectangle(img, (x, y), (x + w, y + h), (225, 0, 0), 2)
-            #sending only face part of image  for accurate prediction
+            # sending only face part of image  for accurate prediction
             predicted_emotion = predict_emotion(img_rec[y:y + h, x:x + w])
             cv2.putText(img_rec, predicted_emotion, (x + 20, y + 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (225, 0, 0), 2)
             plot_img(img_rec)
+    else:
+        plot_img(img)
 
 
 cap=cv2.VideoCapture(0)
