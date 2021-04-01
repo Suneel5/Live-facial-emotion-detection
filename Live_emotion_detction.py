@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 
 saved_model=load_model('fer_model.h5')
 emotions = {0: 'Angry',
