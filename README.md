@@ -11,7 +11,7 @@ pip install tensorflow
 How to run?
 
 ```bash
-git clone git@github.com:sunilpanday/Live-facial-emotion-detection.git
+git clone git@github.com:Suneel5/Live-facial-emotion-detection.git
 cd Live-facial-emotion-detection
 python Live_emotion_detection.py
 ```
