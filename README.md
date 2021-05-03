@@ -12,6 +12,6 @@ How to run?
 
 ```bash
 git clone git@github.com:sunilpanday/Live-facial-emotion-detction.git
-cd Live-facial-emotion-detction
-python Live_emotion_detction.py
+cd Live-facial-emotion-detection
+python Live_emotion_detection.py
 ```

@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 
-saved_model=load_model('fer_model.h5')
+#saved_model=load_model('fer_model.h5')
+saved_model=load_model(r'C:\Users\USER\Documents\git\Live-facial-emotion-detction\fer_model.h5')
 emotions = {0: 'Angry',
             1: 'Happy',
             2: 'Sad',
@@ -23,7 +24,6 @@ def emotion_detction(img):
     #Detcting face in the image so we can feed it to the  model for emotion prediction
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
     faces = face_cascade.detectMultiScale(img)
-    # if faces != ():
     for x, y, w, h in faces:
         img = cv2.rectangle(img, (x, y), (x + w, y + h), (225, 0, 0), 2)
         # sending only face part of image  for accurate prediction
