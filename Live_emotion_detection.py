@@ -35,7 +35,7 @@ while True:
         emoji = PIL.Image.open(f'emoji/{predicted_emotion}.png')
         emoji=emoji.resize((100,100))
         x,y=emoji.size
-        
+
         img=PIL.Image.fromarray(img)
         img.paste(emoji,(0,0,x,y))
         img=np.asarray(img)
