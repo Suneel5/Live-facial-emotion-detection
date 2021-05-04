@@ -37,11 +37,9 @@ while True:
         cv2.putText(img, predicted_emotion, (x + 20, y + 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (225, 0, 0), 2)
         emoji = PIL.Image.open(f'emoji/{predicted_emotion}.png')
         emoji=emoji.resize((100,100))
-        x,y=emoji.size
-
+        #x,y=emoji.size
         img=PIL.Image.fromarray(img)
-        img.paste(emoji,(0,0,x,y))
-
+        img.paste(emoji,(x,y-100,x+100,y))
         img=np.asarray(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     key = cv2.waitKey(1)
