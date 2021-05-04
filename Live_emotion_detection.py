@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 import PIL
-
 from tensorflow.keras.models import load_model
+import matplotlib.pyplot as plt
 
 saved_model=load_model('fer_model.h5')
 emotions = {0: 'Angry',
@@ -24,6 +24,9 @@ def predict_emotion(img_array):
 cap=cv2.VideoCapture(0)
 while True:
     ret,img=cap.read()
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # plt.imshow(img)
+    # plt.show()
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
     # Detcting face in the image so we can feed it to the  model for emotion prediction
     faces = face_cascade.detectMultiScale(img)
@@ -38,10 +41,11 @@ while True:
 
         img=PIL.Image.fromarray(img)
         img.paste(emoji,(0,0,x,y))
-        img=np.asarray(img)
 
+        img=np.asarray(img)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     key = cv2.waitKey(1)
-    cv2.imshow('frame', img)
+    cv2.imshow('Facial Emotion recognition', img)
     if key == ord('q'):
         break
 
