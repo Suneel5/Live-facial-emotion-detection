@@ -43,7 +43,7 @@ while True:
         img=np.asarray(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     key = cv2.waitKey(1)
-    cv2.imshow('Facial Emotion recognition', img)
+    cv2.imshow('Facial Emotion recognition-Press q to exit!', img)
 
     #press q to exit
     if key == ord('q'):
