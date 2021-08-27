@@ -2,6 +2,10 @@
 
 Dataset : [Kaggle](https://www.kaggle.com/deadskull7/fer2013)
 
+By the way ignore my face!<br>
+<img src="https://github.com/Suneel5/Live-facial-emotion-detection/blob/main/images/demo_angry.png" width="45%"></img> 
+<img src="https://github.com/Suneel5/Live-facial-emotion-detection/blob/main/images/demo_happy.png" width="45%"></img>
+
 # Install Dependencies
 ```bash
 pip install numpy
